@@ -23,30 +23,18 @@ submitBtn.addEventListener('click', () => {
 const navAdd = document.querySelector('#addNew');
 const navList = document.querySelector('#list');
 const navContact = document.querySelector('#contact');
-const booksWindow = document.querySelector('.books-section');
-const addWindow = document.querySelector('.add-books');
-const contactWindow = document.querySelector('.contact-section');
 
-navAdd.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  addWindow.classList.remove('toggle');
-  booksWindow.classList.add('toggle');
-  contactWindow.classList.add('toggle');
-});
+import { booksDisp } from './modules/navigation.js'
 
-navList.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  booksWindow.classList.remove('toggle');
-  addWindow.classList.add('toggle');
-  contactWindow.classList.add('toggle');
-});
+navAdd.addEventListener('click', booksDisp);
 
-navContact.addEventListener('click', (evt) => {
-  evt.preventDefault();
-  contactWindow.classList.remove('toggle');
-  booksWindow.classList.add('toggle');
-  addWindow.classList.add('toggle');
-});
+import { addDisp } from './modules/navigation.js'
+
+navList.addEventListener('click',addDisp);
+
+import { contactDisp } from './modules/navigation.js'
+
+navContact.addEventListener('click', contactDisp);
 
 const dateSection = document.querySelector('.date');
 
